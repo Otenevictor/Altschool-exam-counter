@@ -1,0 +1,97 @@
+body {
+  display: flexbox;
+  background-color: lemonchiffon;
+  margin: 0;
+  height: 100vh;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  position: relative;
+  width: 100%;
+  /* margin-bottom: 50px; */
+  height: 50px;
+
+  /* padding: 20px; */
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  /* margin: 20px; */
+
+  /* font-size: 17px; */
+}
+h1 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.5em;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: relative;
+  width: 100%;
+  /* margin-bottom: 50px; */
+  height: 50px;
+  /* padding: 20px; */
+}
+.count {
+  font-size: 2rem;
+}
+button {
+  font-size: 2rem;
+  background-color: goldenrod;
+  border-radius: 15px;
+  color: white;
+}
+.reset {
+  background-color: white;
+  color: red;
+}
+
+@media only screen and (max-width: 700px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content:space-around; */
+    background-color: white;
+    position: relative;
+    width: 100%;
+    /* margin-bottom: 50px; */
+    height: 50px;
+
+    /* padding: 20px; */
+  }
+
+  .navbar a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    /* margin: 20px; */
+
+    /* font-size: 17px; */
+  }
+}
