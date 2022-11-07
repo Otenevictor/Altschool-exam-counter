@@ -1,26 +1,20 @@
 body {
-  display: flexbox;
+  /* display: flexbox; */
   background-color: lemonchiffon;
   margin: 0;
   height: 100vh;
 }
-.navbar {
+.navbar{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content:space-around;
   background-color: white;
   position: relative;
-  width: 100%;
+  width:100%;
   /* margin-bottom: 50px; */
   height: 50px;
 
   /* padding: 20px; */
-}
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .navbar a {
@@ -32,18 +26,41 @@ body {
 
   /* font-size: 17px; */
 }
-h1 {
+h1{
   font-size: 2rem;
 }
-p {
-  font-size: 1.5em;
+p{
+  font-size: 1.2em;
 }
-.content {
+.content{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
   width: 100%;
+
+}
+.error{
+  color: lemonchiffon ;
+}
+.errorBtn{
+background-color: red;
+}
+.switch{
+  font-size: 3rem;
+  margin-top: 20px;
+}
+.switchs{
+  font-size: 2rem;
+  margin-top: 20px;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .white {
   display: flex;
@@ -56,42 +73,42 @@ p {
   height: 50px;
   /* padding: 20px; */
 }
-.count {
+.count{
   font-size: 2rem;
 }
-button {
+button{
   font-size: 2rem;
   background-color: goldenrod;
-  border-radius: 15px;
+  border-radius:15px ;
   color: white;
 }
-.reset {
+.reset{
   background-color: white;
   color: red;
 }
 
 @media only screen and (max-width: 700px) {
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* justify-content:space-around; */
-    background-color: white;
-    position: relative;
-    width: 100%;
-    /* margin-bottom: 50px; */
-    height: 50px;
-
-    /* padding: 20px; */
+    .navbar{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* justify-content:space-around; */
+      background-color: white;
+      position: relative;
+      width:100%;
+      /* margin-bottom: 50px; */
+      height: 50px;
+    
+      /* padding: 20px; */
+    }
+  
+    .navbar a {
+      color: black;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      /* margin: 20px; */
+    
+      /* font-size: 17px; */
+    }
   }
-
-  .navbar a {
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    /* margin: 20px; */
-
-    /* font-size: 17px; */
-  }
-}

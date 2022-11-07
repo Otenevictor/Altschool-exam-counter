@@ -1,59 +1,51 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { NavLink } from 'react-router-dom';
 
-function ErrorFallback({ error, resetErrorBoundary }) {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre style={{ color: 'red' }}>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
-  );
-}
-
-function Bomb({ username }) {
-  if (username === 'bomb') {
-    throw new Error('💥 CABOOM 💥');
+class ErrorTesting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { counter: 0 };
+    this.handleClick = this.handleClick.bind(this);
   }
-  return `Hi ${username}`;
+
+  handleClick() {
+    this.setState(({ counter }) => ({
+      counter: counter + 1,
+    }));
+  }
+
+  render() {
+    if (this.state.counter === 1) {
+      // Simulate a JS error
+      throw new Error(
+        'I crashed! because something went wrong. this is my error boundary testing page'
+      );
+    }
+
+    return (
+      <>
+        <h2>{this.state.counter}</h2>
+        <button className="errorBtn" onClick={this.handleClick}>
+          Click me
+        </button>
+      </>
+    );
+  }
 }
 
-function ErrorBoundary() {
-  const [username, setUsername] = React.useState('');
-  const usernameRef = React.useRef(null);
-
-  return (
-    <div>
-      <label>
-        {`Username (don't type "bomb"): `}
-        <input
-          placeholder={`type "bomb"`}
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          ref={usernameRef}
-        />
-      </label>
-      <div>
-        <ErrorBoundary
-          FallbackComponent={ErrorFallback}
-          onReset={() => {
-            setUsername('');
-            usernameRef.current.focus();
-          }}
-          resetKeys={[username]}
-        >
-          <Bomb username={username} />
-        </ErrorBoundary>
-      </div>
-    </div>
-  );
-}
+// export default ErrorTesting;
 
 function TestErrorPage() {
   return (
     <>
-      <section className="white">
+      <section className="navbar">
         <section>
+          <Helmet>
+            <title>AltschExam</title>
+            <meta name="discriction" content="ErrorBoundary" />
+            <link rel="canonical" href="/error" />
+          </Helmet>
           <NavLink
             style={({ isActive }) =>
               isActive ? { color: 'red' } : { color: 'black' }
@@ -64,12 +56,12 @@ function TestErrorPage() {
           </NavLink>
           <NavLink to="/counter1">Counter1</NavLink>
           <NavLink to="/counter2">Counter2</NavLink>
-          <NavLink to="/ErrorBoundary">ErrorBoundary</NavLink>
+          <NavLink to="/error">Error</NavLink>
         </section>
       </section>
-      <h1>Home page</h1>
-      <p>i am in the first page</p>
-      <ErrorBoundary />
+      <h1>ErrorBoundary Test Page</h1>
+      <p>click on the button to throw error</p>
+      <ErrorTesting />
     </>
   );
 }

@@ -57,11 +57,16 @@ function Counter2() {
           >
             Counter2
           </NavLink>
-          <NavLink to="/TestErrorPage">Error</NavLink>
+          <NavLink to="/error">Error</NavLink>
         </section>
       </section>
       <h1>Using useReducer</h1>
       <Count />
+      <br />
+      <br />
+      <div className="switch">
+        <NavLink to="/counter1">Counter1</NavLink>
+      </div>
     </>
   );
 }
